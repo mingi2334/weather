@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=bb9a19ab12ab00b80f8fbbbef995cc92"></script>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3f9fc0f1d38f0946e4814f15e677e4db"></script>
     <title>마이 날씨</title>
     <style>
         *{margin: 0 auto; padding:0;}
@@ -171,7 +171,7 @@
         var air = document.querySelector('.air');
 
         function show(Lat, Lon){
-            $.getJSON(`http://api.openweathermap.org/data/2.5/weather?lat=${Lat}&lon=${Lon}&appid=02a146d88b51a0a88235d8a46514d112&units=metric`,function(data){
+            $.getJSON(`https://api.openweathermap.org/data/2.5/weather?lat=${Lat}&lon=${Lon}&appid=02a146d88b51a0a88235d8a46514d112&units=metric`,function(data){
                 city.innerHTML = data.name;
                 icon.innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png'>`;
                 text.innerHTML = data.main.temp + "&degC";
@@ -188,7 +188,7 @@
                     ftime[j].innerHTML = ft[j].getDate()+"일";
                 }
             });
-            $.getJSON(`http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${Lat}&lon=${Lon}&appid=02a146d88b51a0a88235d8a46514d112`,function(airData){
+            $.getJSON(`https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${Lat}&lon=${Lon}&appid=02a146d88b51a0a88235d8a46514d112`,function(airData){
                 
                 // var airtime = new Date(airData.list[0].dt*1000);
                 // air.innerHTML = airtime + " ";
